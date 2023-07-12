@@ -1,18 +1,14 @@
 package com.example.Vaccinebooking.Model;
 
 import com.example.Vaccinebooking.Enum.DoseType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 
 import java.util.Date;
 
 @Entity
-@RequestMapping("/Dose")
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -25,8 +21,13 @@ public class Dose {
 
     String doseId;
 
+    @Enumerated(value = EnumType.STRING)
     DoseType doseType;
 
     Date vaccinationDate;
+
+    @ManyToOne
+    @JoinColumn
+    Person person;
 
 }

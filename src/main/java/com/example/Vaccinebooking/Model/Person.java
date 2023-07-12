@@ -4,10 +4,11 @@ import com.example.Vaccinebooking.Enum.Gender;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@RequestMapping("/person")
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -32,4 +33,9 @@ public class Person {
 
     boolean isDose2taken;
 
+//    @OneToMany(mappedBy = "person",cascade = CascadeType.ALL)
+//    List<Dose> doses = new ArrayList<>();
+//
+//    @OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
+//    Certificate certificate;
 }

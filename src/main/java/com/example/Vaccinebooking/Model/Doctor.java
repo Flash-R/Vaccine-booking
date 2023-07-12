@@ -4,10 +4,9 @@ import com.example.Vaccinebooking.Enum.Gender;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 
 @Entity
-@RequestMapping("/doctor")
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)

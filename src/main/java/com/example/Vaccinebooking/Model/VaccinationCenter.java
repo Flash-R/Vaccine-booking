@@ -1,10 +1,7 @@
 package com.example.Vaccinebooking.Model;
 
 import com.example.Vaccinebooking.Enum.CenterType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -19,6 +16,7 @@ public class VaccinationCenter {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
+    @Enumerated(value = EnumType.STRING)
     CenterType centerType;
 
     String centerName;

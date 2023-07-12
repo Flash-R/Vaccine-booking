@@ -10,6 +10,9 @@ public class PersonService {
     @Autowired
     PersonRepository personRepository;
     public Person addPerson(Person person) {
+        person.setDose1Taken(false);
+        person.setDose2taken(false);
+
         Person personSaved = personRepository.save(person);
         return personSaved;
     }
